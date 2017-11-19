@@ -15,6 +15,9 @@ app.use(bodyParser.urlencoded({extended: false}))
 // parse application/json
 app.use(bodyParser.json())
 
+const sendTextMessage = require('./send-data').textMessage
+const sendLocation = require('./send-data').location
+
 // index
 app.get('/', (req, res) => {
 	res.send("Hi I am your Moscow Metro assistant")
