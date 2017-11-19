@@ -150,7 +150,7 @@ const decideMessage = async (sender, textInput) => {
       sendMediaMessage(sender)
     }, 12000)
 
-  } else if (text === "thx") {
+  } else if (['thx', 'thanks', 'ok'].includes(text)) {
     sendTextMessage(sender, "Awesome! Ping me if you need help along the way.")
   }
 }
