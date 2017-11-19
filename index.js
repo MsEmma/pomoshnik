@@ -36,7 +36,7 @@ app.get('/webhook/', (req, res) => {
 app.post('/webhook/', (req, res) => {
 	const myID = 300416860375397
 	const data = req.body.entry[0]
-	
+
 	if (data.messaging) {
 		const messaging_events = data.messaging
 		messaging_events.map(event => {
@@ -84,14 +84,12 @@ const decideMessage = async (sender, textInput) => {
 	if (text === "hi" || text.includes("get_started_payload")){
 
 		const messages = [
-			"Welcome to Find My Taxi 😄 We will give you directions for getting around using minibus taxis. 🚌",
-		 	"Right now, we can only tell you about areas near Cape Town. 🇿🇦",
-		 	"Give it a try! You can type “help” at any time, or “restart” to start again.",
-		 	"Where are you going? Type the name of the taxi rank."
+			"Hi, I am Pomoshnik and I will get you wherever you want to go ASAP",
+		 	"Where do you want to go?"
 		]
 
 		return sendTextMessages(sender, messages)
-	} 
+	}
 }
 
 app.listen(app.get('port'), () => {
