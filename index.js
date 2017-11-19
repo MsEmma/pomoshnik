@@ -87,6 +87,7 @@ const sendTextMessages = (sender, messages) => {
 
 const decideMessage = async (sender, textInput) => {
   console.log(textInput)
+  console.log(sender)
   let text = textInput.toLowerCase()
 
   if (text === "hi" || text.includes("get_started_payload")) {
@@ -94,7 +95,7 @@ const decideMessage = async (sender, textInput) => {
     setTimeout(() => {
       sendButtonMessage(
         sender,
-        " What would you like me to help you with?", [{
+        "Where would you like to go next?", [{
             "type": "postback",
             "title": "Go Home 🏠",
             "payload": "goHome"
@@ -128,7 +129,7 @@ const decideMessage = async (sender, textInput) => {
     setTimeout(() => {
       sendButtonMessage(
         sender,
-        "Well you can either follow the crowd and go Luzhniki Metro station or I can look for an alternative for you.", [{
+        "Well you can either follow the crowd and go to Luzhniki Metro station or I can look for an alternative for you.", [{
             "type": "postback",
             "title": "Nearest Metro Ⓜ️",
             "payload": "nearestMetro"
@@ -163,6 +164,27 @@ const decideMessage = async (sender, textInput) => {
 
   } else if (['thx', 'thanks', 'ok'].includes(text)) {
     sendTextMessage(sender, "Awesome! Ping me if you need help along the way.")
+
+  } else if (textInput === "start") {
+    setTimeout(() => {
+      sendTextMessage(sender, "Seems like the game ⚽ is almost over?")
+      setTimeout(() => {
+        sendButtonMessage(
+          sender,
+          "Where would you like to go next?", [{
+              "type": "postback",
+              "title": "Go Home 🏠",
+              "payload": "goHome"
+            },
+            {
+              "type": "postback",
+              "title": "Get Drinks 🍺",
+              "payload": "getDrinks"
+            }
+          ])
+      }, 1000)
+    }, 5000)
+
   }
 }
 
