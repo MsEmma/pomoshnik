@@ -20,7 +20,7 @@ Start the tunnel
 ```
 ./ngrok http 3000
 ```
-Star the Bot
+Start the Bot
 ```
 nodemon
 ```
