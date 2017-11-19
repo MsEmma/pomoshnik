@@ -21,6 +21,7 @@ const sendTextMessage = require('./send-data').textMessage
 const sendLocation = require('./send-data').location
 const sendButtonMessage = require('./send-data').buttonMessage
 const sendMediaMessage = require('./send-data').mediaMessage
+const sendGenericTemplate = require('./send-data').genericTemplate
 
 // index
 app.get('/', (req, res) => {
@@ -141,14 +142,20 @@ const decideMessage = async (sender, textInput) => {
     }, 1000)
   } else if (textInput === "nearestMetro") {
     sendTextMessage(sender, "Okay, Just follow the crowd.")
-  } else if (textInput === "avoidCrowd") {
-    const messages = ["Sure, I would do the same :). I'll have a look.", "I found a great alternative walk along the river to another less crowded station.", "It is only a 30 minute walk and you will be home faster.", "Avoid the crowd and head to the east part of the stadium.", "From there walk toward the river and follow it until you reach the bridge.", "Now just head straight towards Leninsky Prospekt station."]
 
-    sendTextMessages(sender, messages)
+  } else if (textInput === "avoidCrowd") {
+    sendTextMessage(sender, "Sure, I would do the same :). I'll have a look.")
 
     setTimeout(() => {
-      sendMediaMessage(sender)
-    }, 12000)
+      sendGenericTemplate(sender)
+    }, 1000)
+
+
+
+  } else if (textInput === "detailsWalking") {
+    const messages = ["I found a great alternative walk along the river to another less crowded station.", "It is only a 30 minute walk and you will be home faster.", "Avoid the crowd and head to the east part of the stadium.", "From there walk toward the river and follow it until you reach the bridge.", "Now just head straight towards Leninsky Prospekt station."]
+
+    sendTextMessages(sender, messages)
 
   } else if (['thx', 'thanks', 'ok'].includes(text)) {
     sendTextMessage(sender, "Awesome! Ping me if you need help along the way.")

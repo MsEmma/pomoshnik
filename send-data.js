@@ -31,6 +31,27 @@ const buttonMessage = (sender, text, buttons) => {
   sendRequest(sender, messageData)
 }
 
+const genericTemplate = sender => {
+  let messageData = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "generic",
+        "elements": [{
+          "title": "Directions to Leninsky Prospekt station",
+          "image_url": "https://image.ibb.co/dVe2A6/Screen_Shot_2017_11_19_at_12_49_29_PM.png",
+          "buttons": [{
+            "type": "postback",
+            "title": "Show Details",
+            "payload": "detailsWalking"
+          }]
+        }]
+      }
+    }
+  }
+  sendRequest(sender, messageData)
+}
+
 const mediaMessage = (sender) => {
   console.log('here')
   let messageData = {
@@ -82,3 +103,4 @@ exports.textMessage = textMessage
 exports.location = location
 exports.buttonMessage = buttonMessage
 exports.mediaMessage = mediaMessage
+exports.genericTemplate = genericTemplate
