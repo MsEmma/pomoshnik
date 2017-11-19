@@ -147,13 +147,17 @@ const decideMessage = async (sender, textInput) => {
     sendTextMessage(sender, "Sure, I would do the same :). I'll have a look.")
 
     setTimeout(() => {
-      sendGenericTemplate(sender)
+      sendTextMessage(sender, "I found a great alternative route along the river to another less crowded station.")
     }, 1000)
+
+    setTimeout(() => {
+      sendGenericTemplate(sender)
+    }, 500)
 
 
 
   } else if (textInput === "detailsWalking") {
-    const messages = ["I found a great alternative walk along the river to another less crowded station.", "It is only a 30 minute walk and you will be home faster.", "Avoid the crowd and head to the east part of the stadium.", "From there walk toward the river and follow it until you reach the bridge.", "Now just head straight towards Leninsky Prospekt station."]
+    const messages = ["It is only a 30 minute walk and you will be home faster.", "Avoid the crowd and head to the east part of the stadium.", "From there walk toward the river and follow it until you reach the bridge.", "Now just head straight towards Leninsky Prospekt station."]
 
     sendTextMessages(sender, messages)
 
