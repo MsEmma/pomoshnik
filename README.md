@@ -10,6 +10,10 @@ A FacebookB chat bot for the Moscow Metro
 ```
 npm install -g nodemon
 ```
+3. Fill the .env file
+```
+cp .env.example .env
+```
 
 ## 1. Run the app
 Start the tunnel
