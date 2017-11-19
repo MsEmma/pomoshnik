@@ -87,7 +87,6 @@ const sendTextMessages = (sender, messages) => {
 
 const decideMessage = async (sender, textInput) => {
   console.log(textInput)
-  console.log(sender)
   let text = textInput.toLowerCase()
 
   if (text === "hi" || text.includes("get_started_payload")) {
@@ -148,12 +147,12 @@ const decideMessage = async (sender, textInput) => {
     sendTextMessage(sender, "Sure, I would do the same :). I'll have a look.")
 
     setTimeout(() => {
-      sendTextMessage(sender, "I found a great alternative route along the river to another less crowded station.")
+      sendTextMessage(sender, "I found a great alternative route along the river to a less crowded station.")
     }, 1000)
 
     setTimeout(() => {
       sendGenericTemplate(sender)
-    }, 500)
+    }, 1500)
 
 
 
