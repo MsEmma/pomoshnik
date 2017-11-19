@@ -105,6 +105,23 @@ const decideMessage = async (sender, textInput) => {
           }
         ])
     }, 2000)
+  } else if (textInput === "getDrinks") {
+    sendTextMessage(sender, "Sorry, I can't help you with this.")
+    setTimeout(() => {
+      sendButtonMessage(
+        sender,
+        "Do you want to go home?", [{
+            "type": "postback",
+            "title": "Yes",
+            "payload": "goHome"
+          },
+          {
+            "type": "postback",
+            "title": "No",
+            "payload": "no"
+          }
+        ])
+    }, 2000)
   } else if (textInput === "goHome") {
     sendTextMessage(sender, "Okay, I see you are at the Luzhniki Stadium.")
     setTimeout(() => {
@@ -122,8 +139,10 @@ const decideMessage = async (sender, textInput) => {
           }
         ])
     }, 1000)
+  } else if (textInput === "nearestMetro") {
+    sendTextMessage(sender, "Okay, Just follow the crowd.")
   } else if (textInput === "avoidCrowd") {
-    const messages = ["Sure, I would do the same. I'll have a look.", "A found a great alternative walk along the river to another less crowded station.", "It is only a 30 minute walk and you will be home faster.", "Avoid the crowd and head to the east part of the stadium.", "From there walk toward the river and follow it until you reach the bridge.", "Now just head straight towards Leninsky Prospekt station."]
+    const messages = ["Sure, I would do the same :). I'll have a look.", "I found a great alternative walk along the river to another less crowded station.", "It is only a 30 minute walk and you will be home faster.", "Avoid the crowd and head to the east part of the stadium.", "From there walk toward the river and follow it until you reach the bridge.", "Now just head straight towards Leninsky Prospekt station."]
 
     sendTextMessages(sender, messages)
 
