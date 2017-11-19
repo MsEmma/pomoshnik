@@ -34,7 +34,7 @@ app.get('/webhook/', (req, res) => {
 
 // to post data
 app.post('/webhook/', (req, res) => {
-	const myID = 300416860375397
+	const myID = 297444890746134
 	const data = req.body.entry[0]
 
 	if (data.messaging) {
@@ -42,6 +42,7 @@ app.post('/webhook/', (req, res) => {
 		messaging_events.map(event => {
 			const sender = event.sender.id
 			req.sender = sender
+
 
 			if (event.message && event.message.attachments && event.message.attachments.length > 0 && sender != myID) {
 				const attachment = event.message.attachments[0]
