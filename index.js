@@ -84,7 +84,7 @@ const decideMessage = async (sender, textInput) => {
   console.log(textInput)
   let text = textInput.toLowerCase()
 
-  if (text.includes(text === "hi")) {
+  if (text === "hi") {
   
       sendButtonMessage(
         sender,
