@@ -271,7 +271,7 @@ const decideMessage = async (sender, textInput) => {
             "payload": "getDrinks"
           }
       ])
-    }, 5000)
+    }, 10000)
   }
 }
 
