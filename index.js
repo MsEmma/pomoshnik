@@ -3,8 +3,6 @@
 const express = require('express')
 const session = require('express-session')
 const bodyParser = require('body-parser')
-const request = require('request')
-const R = require('ramda')
 const app = express()
 
 app.set('port', (process.env.PORT || 5000))
@@ -106,7 +104,7 @@ const decideMessage = async (sender, textInput) => {
   } else if (text.includes("get_started_payload")){
       sendButtonMessage(
         sender,
-        "Its game ⚽ day! 🎉 🎊, wanna ...", [
+        "It's game ⚽ day! 🎉 🎊, wanna ...", [
           {
             "type": "postback",
             "title": "buy a metro ticket?",
