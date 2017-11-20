@@ -106,15 +106,15 @@ const decideMessage = async (sender, textInput) => {
   } else if (text.includes("get_started_payload")){
       sendButtonMessage(
         sender,
-        "Its game ⚽ day! 🎉 🎊", [
+        "Its game ⚽ day! 🎉 🎊, wanna ...", [
           {
             "type": "postback",
-            "title": " Wanna buy a metro ticket?",
+            "title": "buy a metro ticket?",
             "payload": "buyTicket"
           },
           {
             "type": "postback",
-            "title": "Wanna go to a game?",
+            "title": "go to a game?",
             "payload": "game"
           }
       ])
