@@ -87,7 +87,7 @@ const decideMessage = async (sender, textInput) => {
   console.log(textInput)
   let text = textInput.toLowerCase()
 
-  if (text.includes("get_started_payload")) {
+  if (text.includes(text === "hi")) {
   
       sendButtonMessage(
         sender,
@@ -103,29 +103,21 @@ const decideMessage = async (sender, textInput) => {
           }
       ])
 
-  } else if (text === "hi"){
-    sendTextMessage(sender, "Hi, Ion")
-    setTimeout(() => {
+  } else if (text.includes("get_started_payload")){
       sendButtonMessage(
         sender,
-        "What can I assist you with?", [
+        "Its game ⚽ day! 🎉 🎊", [
           {
             "type": "postback",
-            "title": "Buy a ticket",
+            "title": " Wanna buy a metro ticket?",
             "payload": "buyTicket"
           },
           {
             "type": "postback",
-            "title": "Go to a game",
+            "title": "Wanna go to a game?",
             "payload": "game"
-          },
-          {
-            "type": "postback",
-            "title": "Ask me anything",
-            "payload": "ama"
           }
-        ])
-    }, 2000)
+      ])
 
   } else if (text === "game") {
     sendButtonMessage(
