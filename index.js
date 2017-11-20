@@ -221,7 +221,7 @@ const decideMessage = async (sender, textInput) => {
     
     sendButtonMessage(
       sender,
-      "Well you can either follow the crowd and go to Luzhniki Metro station or I can look for an alternative routes for you.", [{
+      "Well you can either follow the crowd and go to Luzhniki Metro station or I can look for an alternative route for you.", [{
         "type": "postback",
         "title": "Nearest Metro Ⓜ️",
         "payload": "nearestMetro"
