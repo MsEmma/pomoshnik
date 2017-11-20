@@ -104,7 +104,7 @@ const decideMessage = async (sender, textInput) => {
       ])
 
   } else if (text === "hi"){
-    sendTextMessage(sender, "Hi, James")
+    sendTextMessage(sender, "Hi, Ion")
     setTimeout(() => {
       sendButtonMessage(
         sender,
