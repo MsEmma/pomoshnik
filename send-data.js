@@ -40,11 +40,18 @@ const genericTemplate = sender => {
         "elements": [{
           "title": "Directions to Leninsky Prospekt station",
           "image_url": "https://image.ibb.co/dVe2A6/Screen_Shot_2017_11_19_at_12_49_29_PM.png",
-          "buttons": [{
-            "type": "postback",
-            "title": "Show Details",
-            "payload": "detailsWalking"
-          }]
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "Show Details",
+              "payload": "detailsWalking"
+            },
+            {
+              "type": "postback",
+              "title": "Save Map",
+              "payload": "saveMap"
+            }
+          ]
         }]
       }
     }
@@ -104,3 +111,4 @@ exports.location = location
 exports.buttonMessage = buttonMessage
 exports.mediaMessage = mediaMessage
 exports.genericTemplate = genericTemplate
+
